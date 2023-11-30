@@ -1,29 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
 :root{
-    --primary-color: #000000;
+    --ss:2f3037;
+    --primary-color: #131316;
     --secondary-color: #323232;
     --tertiary-color: #FF1E56;
     --quaternary-color: #FFAC41;
     --white: white;
 
 
-    --primary-font: 'Lato', sans-serif;
+    --primary-font: Inter, sans-serif;
     --secondary-font: 'Lato', sans-serif;
     --tertiary-font: 'Lato', sans-serif;
 
 
     --primary-font-size: 16px;
-    --secondary-font-size: 16px;
-    --tertiary-font-size: 16px;
+    --secondary-font-size: 24px;
+    --tertiary-font-size: 14px;
 
     --primary-line-height: 1.5;
-    --secondary-line-height: 1.5;
-    --tertiary-line-height: 1.5;
+    --secondary-line-height: 2.5;
+    --tertiary-line-height: 3.5;
 
     --primary-letter-spacing: 1px;
-    --secondary-letter-spacing: 1px;
-    --tertiary-letter-spacing: 1px;
-
+    --secondary-letter-spacing: 3px;
+    --tertiary-letter-spacing: 5px;
+    
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
 body{
@@ -32,6 +35,95 @@ body{
     font-size: var(--primary-font-size)!important;
     line-height: var(--primary-line-height)!important;
     letter-spacing: var(--primary-letter-spacing)!important;
-    color: var(--tertiary-color);
+    color: var(--primary-color);
 }
 
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gap10{
+    gap: 10px;
+}
+.flex-spacearound{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.product{
+    position: relative;
+    background-color: var(--secondary-color), linear-grediant;
+    border-radius: 24px;
+
+}
+
+.pro-content{
+    position: relative;
+    background-color: var(--secondary-color), linear-grediant;
+    border-radius: 24px; 
+}
+  
+.product:before {
+    content:"";
+    position: absolute;
+    inset: -5px;
+    transform: translate(10px,8px);
+    z-index: -1;
+    background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+.product > img {
+    border-radius: 16px;
+    object-fit: cover;
+    cursor: pointer;
+    
+}
+.pro-content:hover > .sub-content{
+   
+    bottom: 0;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+
+}
+
+.sub-content{
+    
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    border-radius: 100px 100px 16px 16px;
+    background-color: var(--white);
+    color: var(--tertiary-color);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    height: 100px;
+    box-shadow: var(--secondary-color) 0px 0px 10px 0px;
+
+}
+
+.product-sale {
+    position:absolute;
+    right:-45px;
+    top:10px;
+    width:150px;
+    padding:10px;
+    text-align:center;
+    
+    background: linear-gradient(45deg, #FF1E56, #FFAC41);
+    
+    font-family:'Playfair Display';
+    color:#fff;
+    z-index: 99;
+    transform:rotate(45deg);
+  }
