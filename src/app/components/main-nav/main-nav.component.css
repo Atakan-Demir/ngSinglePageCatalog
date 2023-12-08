@@ -1,5 +1,64 @@
 
 .navbar{
-    background-color:rgba(0, 0, 0, 0.5)!important;
-    
+    /*background-color:rgba(0, 0, 0, 0.5)!important;*/
+    background: linear-gradient(60deg, rgba(255, 30, 86 ,0.5) 0%, rgba(255, 172, 65, 0.5) 100%) !important;
+
 }
+.language-selector {
+    position: relative;
+    display: inline-block;
+    color: white;
+    
+  }
+  
+  .dropdown-button {
+    padding: 5px 10px;
+    
+    border-radius: 5px; /* Border radius eklendi */
+    cursor: pointer; /* İmleç pointer olarak ayarlandı */
+    display: flex;
+    align-items: center;
+    background-color: 00000025; /* Arka plan rengi */
+    transition: background-color 0.3s; /* Renk değişimi için geçiş efekti */
+    
+  }
+  
+  .dropdown-button:hover {
+    
+    border: 0px 0px 1px 0px solid #ccc;
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    background-color: #00000025;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Dropdown içeriği için border radius */
+  }
+  
+  .dropdown-content div {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer; /* İmleç pointer olarak ayarlandı */
+    transition: background-color 0.3s; /* Renk değişimi için geçiş efekti */
+  }
+  
+  .dropdown-content div:hover {
+    background-color: #1d1d1d; /* Üzerine gelindiğinde arka plan rengi değişir */
+  }
+  
+  .flag-icon {
+    margin-right: 5px;
+  }
+  .disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .disabled:hover {
+    background-color: transparent; /* Üzerine gelindiğinde arka plan rengi değişmesin */
+  }
+  
+  

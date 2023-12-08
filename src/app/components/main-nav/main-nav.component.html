@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-lg">
   <div class="container-fluid">
     <a class="navbar-brand ms-5" href="#"><strong>Company Name</strong></a>
@@ -9,19 +8,38 @@
     <div class="collapse navbar-collapse justify-content-center nav-fill" id="navbarNav">
       <ul class="navbar-nav me-5">
         <li class="nav-item me-5">
-          <a class="nav-link active" aria-current="page" href="#" >Home Page</a>
+          <a class="nav-link active" aria-current="page" href="#">Home Page</a>
         </li>
         <li class="nav-item me-5">
-          <a class="nav-link" aria-current="page" href="#Section1" >Catogory-1</a>
+          <a class="nav-link" aria-current="page" href="#Section1">Catogory-1</a>
         </li>
         <li class="nav-item me-5">
-          <a class="nav-link" aria-current="page" href="#Section2" >Catogory-2</a>
+          <a class="nav-link" aria-current="page" href="#Section2">Catogory-2</a>
         </li>
-        
+
 
       </ul>
-    
+
     </div>
+    
+    <!-- LANGUAGE SELECTOR
+
+    <div class="language-selector">
+      <div (click)="toggleDropdown()" class="dropdown-button">
+        <span class="me-2 fi fi-" [ngClass]="'fi fi-' + selectedLanguage"></span>
+        {{ getLanguageName(selectedLanguage) }}
+        <i class="ms-2 bi bi-chevron-down"></i>
+      </div>
+      <div *ngIf="dropdownOpen" class="dropdown-content">
+        <div *ngFor="let language of languages" 
+             (click)="!language.disabled && selectLanguage(language)"
+             [ngClass]="{'disabled': language.disabled}">
+          <span class="fi fi-" [ngClass]="'fi fi-' + language.code"></span>
+          {{ language.name }}
+        </div>
+      </div>
+    </div>
+    -->
   </div>
 </nav>
 

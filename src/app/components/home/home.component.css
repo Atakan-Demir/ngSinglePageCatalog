@@ -13,7 +13,10 @@ h1 {
   .header {
     position:relative;
     text-align:center;
-    background: linear-gradient(60deg, var(--tertiary-color) 0%, var(--quaternary-color) 100%);
+   /* background: linear-gradient(60deg, #FF1E56 0%, #FFAC41 100%);*/
+    /* background dark mask */
+     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), linear-gradient(60deg, #FF1E56 0%, #FFAC41 100%); 
+    
     color:var(--white);
   }
   .logo {

@@ -1,13 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-:root{
-    --ss:2f3037;
+:root {
+    --black: #000000;
     --primary-color: #131316;
     --secondary-color: #323232;
     --tertiary-color: #FF1E56;
     --quaternary-color: #FFAC41;
     --white: white;
-
+    --silver: #C0C0C0;
 
     --primary-font: Inter, sans-serif;
     --secondary-font: 'Lato', sans-serif;
@@ -25,64 +25,75 @@
     --primary-letter-spacing: 1px;
     --secondary-letter-spacing: 3px;
     --tertiary-letter-spacing: 5px;
-    
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    /* fix for Chrome */
 }
 
-body{
-    background-color: var(--primary-color)!important;
-    font-family: var(--primary-font)!important;
-    font-size: var(--primary-font-size)!important;
-    line-height: var(--primary-line-height)!important;
-    letter-spacing: var(--primary-letter-spacing)!important;
-    color: var(--primary-color);
+body {
+    background-color: var(--black) !important;
+
+    font-family: var(--primary-font) !important;
+    font-size: var(--primary-font-size) !important;
+    line-height: var(--primary-line-height) !important;
+    letter-spacing: var(--primary-letter-spacing) !important;
+    color: var(--silver);
 }
 
 
-.flex-wrap{
+.flex-wrap {
     display: flex;
     flex-wrap: wrap;
 }
-.gap10{
+
+.gap10 {
     gap: 10px;
 }
-.flex-spacearound{
+
+.flex-spacearound {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.product{
+.product {
+    display: inline-flex;
     position: relative;
     background-color: var(--secondary-color), linear-grediant;
     border-radius: 24px;
 
 }
-
-.pro-content{
+.pro-img {
+    width: 100%;
+}
+.pro-content {
     position: relative;
     background-color: var(--secondary-color), linear-grediant;
-    border-radius: 24px; 
+    border-radius: 24px;
 }
-  
+
 .product:before {
-    content:"";
+    content: "";
     position: absolute;
     inset: -5px;
-    transform: translate(10px,8px);
+    transform: translate(0px, 0px);
     z-index: -1;
+    /* background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700); */
     background: conic-gradient(from 90deg at 40% -25%, #ffd700, #f79d03, #ee6907, #e6390a, #de0d0d, #d61039, #cf1261, #c71585, #cf1261, #d61039, #de0d0d, #ee6907, #f79d03, #ffd700, #ffd700, #ffd700);
-    filter: blur(10px);
-    opacity: 0.5;
-  }
-.product > img {
+    filter: blur(5px);
+    opacity: 0.7;
+    border-radius: 24px;
+}
+
+.product>img {
     border-radius: 16px;
     object-fit: cover;
     cursor: pointer;
-    
+
 }
-.pro-content:hover > .sub-content{
-   
+
+.pro-content:hover>.sub-content {
+
     bottom: 0;
     opacity: 1;
     transition: ease-in-out 0.5s;
@@ -90,15 +101,15 @@ body{
 
 }
 
-.sub-content{
-    
+.sub-content {
+
     position: absolute;
     opacity: 0;
     left: 0;
     right: 0;
     padding: 16px;
     border-radius: 100px 100px 16px 16px;
-    background-color: var(--white);
+    background-color: var(--silver);
     color: var(--tertiary-color);
     font-size: 16px;
     line-height: 1.5;
@@ -113,17 +124,30 @@ body{
 }
 
 .product-sale {
-    position:absolute;
-    right:-45px;
-    top:10px;
-    width:150px;
-    padding:10px;
-    text-align:center;
-    
+    position: absolute;
+    right: -45px;
+    top: 10px;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+
     background: linear-gradient(45deg, #FF1E56, #FFAC41);
-    
-    font-family:'Playfair Display';
-    color:#fff;
+
+    font-family: 'Playfair Display';
+    color: #fff;
     z-index: 99;
-    transform:rotate(45deg);
-  }
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: 900px) {
+    .product {
+        width: 48%;
+        height: 15rem;
+    }
+    .pro-img {
+        width: auto;
+        height: 100%;
+        object-fit: fill;
+    }
+
+}
